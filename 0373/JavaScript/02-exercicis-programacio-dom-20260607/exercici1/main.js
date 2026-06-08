@@ -42,31 +42,34 @@ console.log(`Reviu: ${PREU_REVIU}₽\n`);
 // ============================================
 // El jugador ha de començar amb 15000 monedes
 
-let monedesJugador;
+let monedesJugador = 15000;
 
 // ============================================
 // ✅ TASCA 2: Actualitzar el número de monedes al DOM
 // ============================================
 // Selecciona l'element i actualitza el seu text
+const divMonedasJugador = document.querySelector('#monedes-jugador');
 
+divMonedasJugador.textContent = monedesJugador;
 // ============================================
 // ✅ TASCA 3: Comprar 3 Poké Balls
 // ============================================
 // Calcula quant costen 3 Poké Balls
 
-let quantitatPokeBalls;
-let costPokeBalls;
-
+let quantitatPokeBalls = 3;
+let costPokeBalls = PREU_POKE_BALL * quantitatPokeBalls;
+console.log(costPokeBalls);
 // ============================================
 // ✅ TASCA 4: Restar el cost de les monedes del jugador
 // ============================================
 // Calcula quantes monedes li quedaran al jugador després de la compra de 3 pokéballs
-
+monedesJugador = monedesJugador - costPokeBalls;
+console.log(monedesJugador);
 // ============================================
 // ✅ TASCA 5: Actualitzar les monedes al DOM
 // ============================================
 // Actualitza el número total de monedes
-
+divMonedasJugador.textContent = monedesJugador;
 // ============================================
 // ✅ TASCA 6: Afegir les Poké Balls a l'inventari (DOM)
 // ============================================
@@ -78,6 +81,14 @@ let costPokeBalls;
 //   <div class="item-inventari-nom">Poké Ball</div>
 //   <div class="item-inventari-quantitat">x${quantitatPokeBalls}</div>
 // </div>
+const divInventario = document.querySelector('#inventari');
+
+divInventario.innerHTML =
+  `<div class="item-inventari">\
+<div class="item-inventari-icon"><img src="./img/pokeball.png" alt="Poké Ball"></div>\
+<div class="item-inventari-nom">Poké Ball</div>\
+<div class="item-inventari-quantitat">x${quantitatPokeBalls}</div>\
+</div>;
 
 // ============================================
 // ✅ TASCA 7: Comprar 4 Superpocions
@@ -157,9 +168,9 @@ let costMasterBalls;
 // Utilitza un operador relacional per comprovar si tens prou monedes
 // potComprar serà true o false (has de comprovar si monedesJugador és mes gran o igual que costMasterBalls)
 
-let potComprar;
-console.log(`\nIntentant comprar 1 Master Ball per ${PREU_MASTER_BALL}₽...`);
-console.log(`Monedes actuals: ${monedesJugador}₽`);
+// let potComprar;
+ console.log(`\nIntentant comprar 1 Master Ball per $//{PREU_MASTER_BALL}₽...`);
+//console.log(`Monedes actuals: ${monedesJugador}₽`);
 if (potComprar) {
   // Resta les monedes
 
